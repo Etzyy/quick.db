@@ -34,11 +34,11 @@ module.exports = {
  */
   
   fetch: function(key, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
     return arbitrate('fetch', {id: key, ops: ops || {}});
   },
   get: function(key, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
     return arbitrate('fetch', {id: key, ops: ops || {}});
   },
   
@@ -50,8 +50,8 @@ module.exports = {
  */
   
   set: function(key, value, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-    if (!value && value != 0) throw new TypeError('No value specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
+    if (!value && value != 0) throw new TypeError('No value specified.');
     return arbitrate('set', {stringify: true, id: key, data: value, ops: ops || {}});
   },
   
@@ -63,8 +63,8 @@ module.exports = {
  */
   
   add: function(key, value, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-    if (isNaN(value)) throw new TypeError('Must specify value to add. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
+    if (isNaN(value)) throw new TypeError('Must specify value to add.');
     return arbitrate('add', {id: key, data: value, ops: ops || {}});
   },
   
@@ -76,8 +76,8 @@ module.exports = {
  */
   
   subtract: function(key, value, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-    if (isNaN(value)) throw new TypeError('Must specify value to add. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
+    if (isNaN(value)) throw new TypeError('Must specify value to add.');
     return arbitrate('subtract', {id: key, data: value, ops: ops || {}});
   },
   
@@ -89,8 +89,8 @@ module.exports = {
  */
   
   push: function(key, value, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-    if (!value && value != 0) throw new TypeError('Must specify value to push. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
+    if (!value && value != 0) throw new TypeError('Must specify value to push.');
     return arbitrate('push', {stringify: true, id: key, data: value, ops: ops || {}});
   },
   
@@ -107,7 +107,7 @@ module.exports = {
  */
   
   delete: function(key, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
     return arbitrate('delete', {id: key, ops: ops || {}});
   },
   
@@ -119,12 +119,12 @@ module.exports = {
  */
   
   has: function(key, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
     return arbitrate('has', {id: key,  ops: ops || {}});
   },
   
   includes: function(key, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
     return arbitrate('has', {id: key,  ops: ops || {}});
   },
   
@@ -149,7 +149,7 @@ module.exports = {
   
   
   type: function(key, ops) {
-    if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+    if (!key) throw new TypeError('No key specified.');
     return arbitrate('type', {id: key, ops: ops || {}});
   },
   
@@ -162,57 +162,57 @@ module.exports = {
   table: function(tableName, options = {}) {
   
     // Set Name
-    if (typeof tableName !== 'string') throw new TypeError('Table name has to be a string. Need Help? Check out: discord.gg/plexidev');
-    else if (tableName.includes(' ')) throw new TypeError('Table name cannot include spaces. Need Help? Check out: discord.gg/plexidev');
+    if (typeof tableName !== 'string') throw new TypeError('Table name has to be a string. Need Help? Check out: ');
+    else if (tableName.includes(' ')) throw new TypeError('Table name cannot include spaces. Need Help? Check out: ');
     this.tableName = tableName;
     
     // Methods
     this.fetch = function(key, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
       return arbitrate('fetch', {id: key, ops: ops || {}}, this.tableName);
     }
     
     this.get = function(key, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
       return arbitrate('fetch', {id: key, ops: ops || {}}, this.tableName);
     }
     
     this.set = function(key, value, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-      if (!value && value != 0) throw new TypeError('No value specified. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
+      if (!value && value != 0) throw new TypeError('No value specified.');
       return arbitrate('set', {stringify: true, id: key, data: value, ops: ops || {}}, this.tableName);
     }
     
     this.add = function(key, value, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-      if (isNaN(value)) throw new TypeError('Must specify value to add. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
+      if (isNaN(value)) throw new TypeError('Must specify value to add.');
       return arbitrate('add', {id: key, data: value, ops: ops || {}}, this.tableName);
     }
     
     this.subtract = function(key, value, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-      if (isNaN(value)) throw new TypeError('Must specify value to add. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
+      if (isNaN(value)) throw new TypeError('Must specify value to add.');
       return arbitrate('subtract', {id: key, data: value, ops: ops || {}}, this.tableName);
     }
     
     this.push = function(key, value, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
-      if (!value && value != 0) throw new TypeError('Must specify value to push. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
+      if (!value && value != 0) throw new TypeError('Must specify value to push.');
       return arbitrate('push', {stringify: true, id: key, data: value, ops: ops || {}}, this.tableName);
     }
     
     this.delete = function(key, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
       return arbitrate('delete', {id: key, ops: ops || {}}, this.tableName);
     }
     
     this.has = function(key, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
       return arbitrate('has', {id: key,  ops: ops || {}}, this.tableName);
     }
     
     this.includes = function(key, ops) {
-      if (!key) throw new TypeError('No key specified. Need Help? Check Out: discord.gg/plexidev');
+      if (!key) throw new TypeError('No key specified.');
       return arbitrate('has', {id: key,  ops: ops || {}}, this.tableName);
     }
     
